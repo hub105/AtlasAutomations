@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atlas Automations — AI Chatbots for Nigerian Businesses</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0a0a0a;
+            color: #ffffff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 255, 0, 0.1);
+            padding: 1rem 0;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-placeholder {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #00ff00, #00cc00);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #0a0a0a;
+            font-size: 24px;
+            box-shadow: 0 0 20px rgba(0, 255, 0, 0.3);
+        }
+
+        .logo-text {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 20px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #00ff00, #00ff88);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .cta-button {
+            background: #00ff00;
+            color: #0a0a0a;
+            border: none;
+            padding: 12px 28px;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 20px rgba(0, 255, 0, 0.4);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 30px rgba(0, 255, 0, 0.6);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(0, 255, 0, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            padding: 10px 20px;
+            border: 1px solid #00ff00;
+            border-radius: 50px;
+            color: #00ff00;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            background: rgba(0, 255, 0, 0.05);
+        }
+
+        .hero h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 64px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero h1 .highlight {
+            color: #00ff00;
+            text-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #cccccc;
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .secondary-button {
+            background: transparent;
+            color: #00ff00;
+            border: 2px dashed #00ff00;
+            padding: 12px 28px;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .secondary-button:hover {
+            background: rgba(0, 255, 0, 0.1);
+            transform: translateY(-2px);
+        }
+
+        /* Stats Section */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            padding: 60px 0;
+            border-top: 1px solid rgba(0, 255, 0, 0.2);
+            border-bottom: 1px solid rgba(0, 255, 0, 0.2);
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 48px;
+            font-weight: 700;
+            color: #00ff00;
+            margin-bottom: 10px;
+            text-shadow: 0 0 20px rgba(0, 255, 0, 0.3);
+        }
+
+        .stat-label {
+            color: #999999;
+            font-size: 14px;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 80px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-label {
+            color: #00ff00;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+        }
+
+        .section-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .section-subtitle {
+            color: #999999;
+            font-size: 16px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: linear-gradient(135deg, rgba(0, 255, 0, 0.05) 0%, rgba(0, 255, 0, 0.02) 100%);
+            border: 1px solid rgba(0, 255, 0, 0.2);
+            border-radius: 12px;
+            padding: 30px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .service-card:hover {
+            border-color: #00ff00;
+            box-shadow: 0 0 30px rgba(0, 255, 0, 0.2);
+            transform: translateY(-5px);
+        }
+
+        .service-icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .service-card h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .service-card p {
+            color: #999999;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        /* Bot Demos Section */
+        .bot-demos {
+            padding: 80px 0;
+            background: linear-gradient(180deg, rgba(0, 255, 0, 0.05) 0%, transparent 100%);
+            border-top: 1px solid rgba(0, 255, 0, 0.2);
+        }
+
+        .demos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .demo-card {
+            background: rgba(26, 26, 26, 0.8);
+            border: 1px solid rgba(0, 255, 0, 0.3);
+            border-radius: 12px;
+            padding: 25px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .demo-card:hover {
+            border-color: #00ff00;
+            box-shadow: 0 0 25px rgba(0, 255, 0, 0.3);
+            transform: translateY(-5px);
+        }
+
+        .demo-icon {
+            font-size: 50px;
+            margin-bottom: 15px;
+        }
+
+        .demo-card h4 {
+            font-family: 'Space Grotesk', sans-serif;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        .demo-link {
+            display: inline-block;
+            background: #00ff00;
+            color: #0a0a0a;
+            padding: 10px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 13px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .demo-link:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(0, 255, 0, 0.4);
+        }
+
+        /* Pricing Section */
+        .pricing {
+            padding: 80px 0;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .pricing-card {
+            background: linear-gradient(135deg, rgba(0, 255, 0, 0.05) 0%, rgba(0, 255, 0, 0.02) 100%);
+            border: 1px solid rgba(0, 255, 0, 0.2);
+            border-radius: 12px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .pricing-card.popular {
+            border: 2px solid #00ff00;
+            transform: scale(1.05);
+            box-shadow: 0 0 40px rgba(0, 255, 0, 0.3);
+        }
+
+        .pricing-badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #00ff00;
+            color: #0a0a0a;
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .pricing-card h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 24px;
+            margin-bottom: 15px;
+            margin-top: 10px;
+        }
+
+        .pricing-price {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 48px;
+            font-weight: 700;
+            color: #00ff00;
+            margin-bottom: 10px;
+        }
+
+        .pricing-currency {
+            font-size: 20px;
+        }
+
+        .pricing-period {
+            color: #999999;
+            font-size: 14px;
+            margin-bottom: 30px;
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin-bottom: 30px;
+            text-align: left;
+        }
+
+        .pricing-features li {
+            padding: 10px 0;
+            color: #cccccc;
+            font-size: 14px;
+            border-bottom: 1px solid rgba(0, 255, 0, 0.1);
+        }
+
+        .pricing-features li:before {
+            content: '✓ ';
+            color: #00ff00;
+            font-weight: 700;
+            margin-right: 10px;
+        }
+
+        .pricing-card button {
+            width: 100%;
+            padding: 12px;
+            border-radius: 50px;
+            border: none;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 14px;
+        }
+
+        .pricing-card.popular button {
+            background: #00ff00;
+            color: #0a0a0a;
+        }
+
+        .pricing-card:not(.popular) button {
+            background: transparent;
+            color: #00ff00;
+            border: 2px dashed #00ff00;
+        }
+
+        .pricing-card button:hover {
+            transform: translateY(-2px);
+        }
+
+        /* Footer CTA */
+        .footer-cta {
+            padding: 60px 0;
+            text-align: center;
+            border-top: 1px solid rgba(0, 255, 0, 0.2);
+        }
+
+        .footer-cta h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+
+        .footer-cta p {
+            color: #999999;
+            font-size: 16px;
+            margin-bottom: 30px;
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(0, 0, 0, 0.5);
+            border-top: 1px solid rgba(0, 255, 0, 0.1);
+            padding: 40px 0;
+            text-align: center;
+            color: #666666;
+            font-size: 14px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            .section-title {
+                font-size: 32px;
+            }
+
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pricing-card.popular {
+                transform: scale(1);
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .cta-button, .secondary-button {
+                width: 100%;
+            }
+        }
+
+        /* Animations */
+        @keyframes glow {
+            0%, 100% {
+                text-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
+            }
+            50% {
+                text-shadow: 0 0 30px rgba(0, 255, 0, 0.8);
+            }
+        }
+
+        .glow {
+            animation: glow 2s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-section">
+                    <div class="logo-placeholder">YOUR LOGO</div>
+                    <div class="logo-text">Atlas</div>
+                </div>
+                <button class="cta-button">Get Started</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">🇳🇬 #1 AI Chatbot Agency in Nigeria</div>
+                <h1>We Build AI Chatbots That <span class="highlight glow">Capture Leads 24/7</span> For Your Business</h1>
+                <p>Never miss a customer again. Our AI chatbots work around the clock — answering questions, capturing leads and booking appointments automatically.</p>
+                <div class="hero-buttons">
+                    <button class="cta-button">🤖 See Live Demo</button>
+                    <button class="secondary-button">💬 WhatsApp Us</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="container">
+        <div class="stats">
+            <div class="stat">
+                <div class="stat-value">24/7</div>
+                <div class="stat-label">Always Online</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value">100%</div>
+                <div class="stat-label">Automated</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value">3x</div>
+                <div class="stat-label">More Leads Captured</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value">₦0</div>
+                <div class="stat-label">Missed Customers</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">What We Build</div>
+                <h2 class="section-title">AI Solutions For Every Business</h2>
+                <p class="section-subtitle">We build custom AI chatbots tailored specifically to your business needs</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🏠</div>
+                    <h3>Real Estate Chatbot</h3>
+                    <p>Captures property leads 24/7, answers buyer and tenant questions, books viewings automatically and sends leads directly to your team.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🍔</div>
+                    <h3>Restaurant Chatbot</h3>
+                    <p>Takes orders, answers menu questions, handles reservations and manages customer inquiries automatically without staff intervention.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🏥</div>
+                    <h3>Healthcare Chatbot</h3>
+                    <p>Books appointments, answers patient questions, sends reminders and handles basic medical inquiries 24/7 professionally.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🛒</div>
+                    <h3>E-commerce Chatbot</h3>
+                    <p>Handles order tracking, product questions, returns and customer support automatically — saving you hours every day.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🏨</div>
+                    <h3>Hotel Chatbot</h3>
+                    <p>Manages room bookings, answers guest questions, handles check-in information and upsells services automatically.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">⚙️</div>
+                    <h3>Custom Chatbot</h3>
+                    <p>Have a unique business need? We build fully custom AI chatbots tailored exactly to your specific requirements.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bot Demos Section -->
+    <section class="bot-demos">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Live Demos</div>
+                <h2 class="section-title">See Our Bots In Action</h2>
+                <p class="section-subtitle">Test our AI chatbots with real-world scenarios</p>
+            </div>
+            <div class="demos-grid">
+                <div class="demo-card">
+                    <div class="demo-icon">🏠</div>
+                    <h4>Real Estate Bot</h4>
+                    <p>Experience how our AI handles property inquiries</p>
+                    <a href="https://real-estate-chatbot-g7za.onrender.com/" target="_blank" class="demo-link">Launch Demo →</a>
+                </div>
+                <div class="demo-card">
+                    <div class="demo-icon">🍔</div>
+                    <h4>Restaurant Bot</h4>
+                    <p>See how orders are taken automatically</p>
+                    <a href="https://restaurant-chatbot-2fcm.onrender.com/" target="_blank" class="demo-link">Launch Demo →</a>
+                </div>
+                <div class="demo-card">
+                    <div class="demo-icon">🏨</div>
+                    <h4>Hotel Bot</h4>
+                    <p>Watch hotel bookings handled seamlessly</p>
+                    <a href="https://hotel-chatbot-1-2gye.onrender.com/" target="_blank" class="demo-link">Launch Demo →</a>
+                </div>
+                <div class="demo-card">
+                    <div class="demo-icon">🏫</div>
+                    <h4>School Bot</h4>
+                    <p>Discover education automation in action</p>
+                    <a href="https://school-chatbot-nqvf.onrender.com/" target="_blank" class="demo-link">Launch Demo →</a>
+                </div>
+                <div class="demo-card">
+                    <div class="demo-icon">🛒</div>
+                    <h4>E-commerce Bot</h4>
+                    <p>See product support automated</p>
+                    <a href="https://e-commerce-chatbot-j82l.onrender.com/" target="_blank" class="demo-link">Launch Demo →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Pricing</div>
+                <h2 class="section-title">Simple Transparent Pricing</h2>
+                <p class="section-subtitle">No hidden fees. No surprises. Just results.</p>
+            </div>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>Basic Bot</h3>
+                    <div class="pricing-price"><span class="pricing-currency">$</span>50</div>
+                    <div class="pricing-period">one time</div>
+                    <ul class="pricing-features">
+                        <li>Simple FAQ chatbot</li>
+                        <li>Lead capture</li>
+                        <li>WhatsApp integration</li>
+                        <li>7 day support</li>
+                    </ul>
+                    <button>Get Started</button>
+                </div>
+                <div class="pricing-card popular">
+                    <div class="pricing-badge">Most Popular ⭐</div>
+                    <h3>Standard Bot</h3>
+                    <div class="pricing-price"><span class="pricing-currency">$</span>80</div>
+                    <div class="pricing-period">one time</div>
+                    <ul class="pricing-features">
+                        <li>Full AI chatbot</li>
+                        <li>24/7 lead capture</li>
+                        <li>Booking system</li>
+                        <li>Custom branding</li>
+                        <li>30 day support</li>
+                    </ul>
+                    <button>Get Started</button>
+                </div>
+                <div class="pricing-card">
+                    <h3>Premium Bot</h3>
+                    <div class="pricing-price"><span class="pricing-currency">$</span>150</div>
+                    <div class="pricing-period">one time</div>
+                    <ul class="pricing-features">
+                        <li>Everything in Standard</li>
+                        <li>Property management</li>
+                        <li>Follow up automation</li>
+                        <li>Analytics dashboard</li>
+                        <li>60 day support</li>
+                    </ul>
+                    <button>Get Started</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer CTA -->
+    <section class="footer-cta">
+        <div class="container">
+            <h2>Ready To Never Miss A Lead Again?</h2>
+            <p>Join Nigerian businesses already using Atlas Automations AI chatbots</p>
+            <button class="cta-button">💬 Chat With Us On WhatsApp</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Atlas Automations. All rights reserved. | Powered by AI</p>
+        </div>
+    </footer>
+
+    <script>
+        // Add smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Button interactions
+        document.querySelectorAll('.cta-button, .secondary-button').forEach(button => {
+            button.addEventListener('click', function() {
+                alert('Feature coming soon! Contact us on WhatsApp for early access.');
+            });
+        });
+    </script>
+</body>
+</html>
