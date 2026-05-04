@@ -369,7 +369,7 @@
             background: #00ff00;
             color: #0a0a0a;
             padding: 5px 15px;
-            border-radius: 20px;
+            border-radius: 50px;
             font-size: 12px;
             font-weight: 700;
         }
@@ -401,12 +401,12 @@
 
         .pricing-features {
             list-style: none;
+            margin-bottom: 30px;
             text-align: left;
-            margin-bottom: 40px;
         }
 
         .pricing-features li {
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             color: #cccccc;
             font-size: 14px;
             display: flex;
@@ -421,13 +421,13 @@
         }
 
         .pricing-card button {
+            width: 100%;
             background: transparent;
             color: #00ff00;
             border: 1px solid #00ff00;
-            padding: 12px 30px;
-            border-radius: 50px;
+            padding: 12px;
+            border-radius: 8px;
             font-weight: 600;
-            width: 100%;
             cursor: pointer;
             transition: all 0.3s ease;
         }
@@ -440,7 +440,6 @@
         .pricing-card button:hover {
             background: #00ff00;
             color: #0a0a0a;
-            box-shadow: 0 0 20px rgba(0, 255, 0, 0.3);
         }
 
         /* Footer CTA */
@@ -459,7 +458,6 @@
         .footer-cta p {
             color: #999999;
             margin-bottom: 40px;
-            font-size: 18px;
         }
 
         /* Footer */
@@ -471,7 +469,18 @@
             font-size: 14px;
         }
 
-        /* Animations */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 40px;
+            }
+            .section-title {
+                font-size: 32px;
+            }
+            .pricing-card.popular {
+                transform: scale(1);
+            }
+        }
+
         @keyframes glow {
             0%, 100% {
                 text-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
@@ -492,7 +501,7 @@
         <div class="container">
             <div class="header-content">
                 <div class="logo-section">
-                    <img src="file_000000005f8c720a8a9f7eb9f3d2ea4a.png" alt="Atlas Logo" style="width: 50px; height: 50px; border-radius: 8px;">
+                    <img src="file_000000005f8c720a8a9f7eb9f3d2ea4a.png" alt="Atlas Automations">
                     <div class="logo-text">Atlas</div>
                 </div>
                 <a href="https://wa.me/2349059144435" target="_blank" class="cta-button">Get Started</a>
@@ -581,7 +590,7 @@
     </section>
 
     <!-- Bot Demos Section -->
-    <section class="bot-demos" id="demos">
+    <section id="demos" class="bot-demos">
         <div class="container">
             <div class="section-header">
                 <div class="section-label">Live Demos</div>
@@ -634,7 +643,7 @@
             <div class="pricing-grid">
                 <div class="pricing-card">
                     <h3>Basic Bot</h3>
-                    <div class="pricing-price"><span class="pricing-currency">₦</span>50</div>
+                    <div class="pricing-price"><span class="pricing-currency">$</span>50</div>
                     <div class="pricing-period">one time</div>
                     <ul class="pricing-features">
                         <li>Simple FAQ chatbot</li>
@@ -642,12 +651,12 @@
                         <li>WhatsApp integration</li>
                         <li>7 day support</li>
                     </ul>
-                    <a href="https://wa.me/2349059144435" target="_blank" style="text-decoration: none;"><button>Get Started</button></a>
+                    <a href="https://wa.me/2349059144435" target="_blank" class="cta-button" style="width: 100%; background: transparent; color: #00ff00; border: 1px solid #00ff00; box-shadow: none;">Get Started</a>
                 </div>
                 <div class="pricing-card popular">
                     <div class="pricing-badge">Most Popular ⭐</div>
                     <h3>Standard Bot</h3>
-                    <div class="pricing-price"><span class="pricing-currency">₦</span>80</div>
+                    <div class="pricing-price"><span class="pricing-currency">$</span>80</div>
                     <div class="pricing-period">one time</div>
                     <ul class="pricing-features">
                         <li>Full AI chatbot</li>
@@ -656,11 +665,11 @@
                         <li>Custom branding</li>
                         <li>30 day support</li>
                     </ul>
-                    <a href="https://wa.me/2349059144435" target="_blank" style="text-decoration: none;"><button>Get Started</button></a>
+                    <a href="https://wa.me/2349059144435" target="_blank" class="cta-button" style="width: 100%;">Get Started</a>
                 </div>
                 <div class="pricing-card">
                     <h3>Premium Bot</h3>
-                    <div class="pricing-price"><span class="pricing-currency">₦</span>150</div>
+                    <div class="pricing-price"><span class="pricing-currency">$</span>150</div>
                     <div class="pricing-period">one time</div>
                     <ul class="pricing-features">
                         <li>Everything in Standard</li>
@@ -669,7 +678,7 @@
                         <li>Analytics dashboard</li>
                         <li>60 day support</li>
                     </ul>
-                    <a href="https://wa.me/2349059144435" target="_blank" style="text-decoration: none;"><button>Get Started</button></a>
+                    <a href="https://wa.me/2349059144435" target="_blank" class="cta-button" style="width: 100%; background: transparent; color: #00ff00; border: 1px solid #00ff00; box-shadow: none;">Get Started</a>
                 </div>
             </div>
         </div>
