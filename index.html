@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Atlas Automation — WhatsApp Bot for Lagos Real Estate</title>
-  <!-- Google Fonts + Font Awesome -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <title>Atlas Automation | WhatsApp Bot for Real Estate – Close More Deals</title>
+  <!-- Google Fonts + Font Awesome 6 -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
     * {
@@ -16,564 +16,600 @@
 
     body {
       font-family: 'Inter', sans-serif;
-      background: #fefefe;
-      color: #1A2C3E;
+      background: #ffffff;
+      color: #1C2E3A;
+      line-height: 1.5;
       scroll-behavior: smooth;
     }
 
+    /* modern container */
     .container {
       max-width: 1280px;
       margin: 0 auto;
-      padding: 0 24px;
+      padding: 0 32px;
     }
 
-    section {
-      padding: 80px 0;
-    }
-
-    .section-title {
-      font-size: 2rem;
-      font-weight: 800;
-      margin-bottom: 16px;
-      letter-spacing: -0.02em;
-      text-align: center;
-    }
-
-    .section-sub {
-      text-align: center;
-      color: #4a5b6e;
-      max-width: 680px;
-      margin: 0 auto 48px auto;
-      font-size: 1.125rem;
-    }
-
-    .badge-green {
-      background: #E6F9F0;
-      color: #0F6E3F;
-      display: inline-block;
-      padding: 6px 16px;
-      border-radius: 40px;
-      font-weight: 600;
-      font-size: 0.8rem;
-      margin-bottom: 20px;
-    }
-
+    /* buttons */
     .btn {
       display: inline-flex;
       align-items: center;
+      justify-content: center;
       gap: 12px;
-      background: #25D366;
-      color: white;
-      font-weight: 700;
+      font-weight: 600;
       padding: 14px 32px;
       border-radius: 60px;
+      transition: all 0.25s ease;
       text-decoration: none;
-      transition: all 0.2s ease;
-      border: none;
       font-size: 1rem;
+      border: none;
       cursor: pointer;
-      box-shadow: 0 8px 16px -6px rgba(37, 211, 102, 0.2);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+    }
+
+    .btn-primary {
+      background: #25D366;
+      color: #0c2b1b;
+      box-shadow: 0 8px 18px rgba(37, 211, 102, 0.25);
+    }
+
+    .btn-primary:hover {
+      background: #20b859;
+      transform: translateY(-2px);
+      box-shadow: 0 12px 24px rgba(37, 211, 102, 0.35);
     }
 
     .btn-outline {
       background: transparent;
       border: 1.5px solid #25D366;
-      color: #1A2C3E;
-      box-shadow: none;
+      color: #1C2E3A;
     }
 
     .btn-outline:hover {
-      background: #25D36610;
+      background: #E9F9EF;
+      border-color: #1e9e4a;
       transform: translateY(-2px);
     }
 
-    .btn:hover {
-      background: #20b859;
-      transform: translateY(-3px);
-      box-shadow: 0 12px 22px -8px rgba(37, 211, 102, 0.3);
+    .btn-dark {
+      background: #0F2C39;
+      color: white;
     }
 
-    .btn-small {
-      padding: 10px 24px;
-      font-size: 0.9rem;
+    .btn-dark:hover {
+      background: #06212b;
+      transform: translateY(-2px);
     }
 
-    /* Hero */
-    .hero {
-      padding: 60px 0 40px;
-      background: linear-gradient(135deg, #F9FBFD 0%, #F0F4F9 100%);
-    }
-
-    .hero-grid {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 48px;
-    }
-
-    .hero-content {
-      flex: 1.2;
-    }
-
-    .hero-content h1 {
-      font-size: 3.1rem;
-      font-weight: 800;
-      line-height: 1.2;
-      letter-spacing: -0.02em;
-      margin: 20px 0 20px;
-      color: #0B2B26;
-    }
-
-    .hero-highlight {
-      color: #25D366;
-      background: linear-gradient(120deg, #25D36620, transparent);
-      padding: 0 8px;
-    }
-
-    .rating {
-      display: flex;
+    /* rating badge */
+    .trust-badge {
+      background: #FEF9E6;
+      padding: 8px 20px;
+      border-radius: 60px;
+      display: inline-flex;
       align-items: center;
       gap: 12px;
-      margin: 24px 0;
-      flex-wrap: wrap;
+      font-weight: 600;
+      font-size: 0.85rem;
+      border: 1px solid #FFE5A3;
+      backdrop-filter: blur(2px);
     }
 
     .stars {
-      color: #FFB83B;
+      color: #F5B042;
       letter-spacing: 2px;
     }
 
-    .hero-buttons {
-      display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
-      margin-top: 20px;
+    /* sections */
+    .section {
+      padding: 80px 0;
+      border-bottom: 1px solid #EFF3F8;
     }
 
-    /* pain points grid */
-    .pain-list {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 24px;
+    .section:last-child {
+      border-bottom: none;
+    }
+
+    .badge-label {
+      background: #E9F5EC;
+      color: #0F6E3F;
+      padding: 6px 18px;
+      border-radius: 40px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      display: inline-block;
+      margin-bottom: 20px;
+      letter-spacing: 0.3px;
+    }
+
+    h2 {
+      font-size: 2.2rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 20px;
+      background: linear-gradient(135deg, #0F2C39, #1F6E43);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    h3 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    /* problem cards */
+    .problem-grid {
+      background: #FAFDF7;
+      border-radius: 36px;
+      padding: 36px 40px;
       margin-top: 24px;
+      box-shadow: 0 12px 28px -8px rgba(0,0,0,0.05);
+      border: 1px solid #E8F0EA;
     }
 
-    .pain-card {
-      background: white;
-      padding: 24px;
-      border-radius: 28px;
-      box-shadow: 0 12px 28px -12px rgba(0, 0, 0, 0.05);
+    .problem-item {
       display: flex;
       align-items: center;
-      gap: 16px;
+      gap: 18px;
+      font-size: 1.05rem;
       font-weight: 500;
-      border: 1px solid #eef2f6;
+      margin-bottom: 24px;
     }
 
-    .pain-card i {
-      font-size: 2rem;
-      color: #25D366;
+    .problem-item i {
+      font-size: 1.6rem;
+      width: 36px;
+      color: #E94F4F;
     }
 
-    /* WhatsApp mock card */
-    .demo-bot-card {
-      background: #ffffff;
-      border-radius: 42px;
-      box-shadow: 0 25px 45px -20px rgba(0, 0, 0, 0.2);
+    /* demo whatsapp card (exact replica, enhanced) */
+    .wa-card {
+      background: white;
+      border-radius: 36px;
+      box-shadow: 0 30px 45px -20px rgba(0, 0, 0, 0.2);
       overflow: hidden;
-      border: 1px solid #e9edf2;
-      transition: transform 0.2s;
+      transition: all 0.3s;
+      border: 1px solid #EFF3F0;
     }
 
-    .chat-header {
+    .wa-header {
       background: #075E54;
-      padding: 18px 24px;
-      color: white;
+      padding: 16px 24px;
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 14px;
     }
 
-    .chat-avatar {
+    .wa-avatar {
       background: #25D366;
-      width: 44px;
-      height: 44px;
+      width: 48px;
+      height: 48px;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-weight: bold;
-      font-size: 20px;
+      font-weight: 800;
+      font-size: 1.4rem;
     }
 
-    .chat-body {
-      padding: 24px;
-      background: #E5DDD5;
-      background-image: radial-gradient(#c9cfd6 1px, transparent 1px);
-      background-size: 20px 20px;
+    .wa-chat {
+      background: #e9e2d9;
+      padding: 28px 24px;
+      background-image: radial-gradient(circle at 15% 40%, rgba(180, 150, 110, 0.06) 2%, transparent 2.5%);
+      background-size: 28px 28px;
     }
 
     .message-bot {
       background: white;
       max-width: 85%;
+      width: fit-content;
       padding: 12px 18px;
-      border-radius: 20px;
-      border-top-left-radius: 4px;
+      border-radius: 20px 20px 20px 4px;
       margin-bottom: 16px;
-      box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+      font-size: 0.9rem;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.04);
     }
 
-    .quick-buttons {
+    .quick-row {
       display: flex;
       gap: 12px;
       flex-wrap: wrap;
-      margin: 16px 0 8px;
+      margin: 12px 0 14px;
     }
 
-    .qb {
-      background: #ffffffdd;
-      border: 1px solid #25D366;
-      padding: 6px 16px;
-      border-radius: 40px;
-      font-size: 0.8rem;
+    .quick-chip {
+      background: #EDF2F5;
+      padding: 8px 22px;
+      border-radius: 60px;
       font-weight: 600;
-      color: #075E54;
-      backdrop-filter: blur(2px);
+      font-size: 0.85rem;
+      cursor: default;
     }
 
-    .demo-link-btn {
+    .demo-btn-chat {
       background: #25D366;
       text-align: center;
-      padding: 16px;
       font-weight: 700;
-      color: white;
+      padding: 14px;
+      border-radius: 60px;
+      display: block;
       text-decoration: none;
+      color: #0B2E1F;
+      margin-top: 24px;
+    }
+
+    /* steps */
+    .steps-row {
       display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      transition: 0.2s;
-    }
-
-    /* features grid */
-    .features-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      flex-wrap: wrap;
       gap: 30px;
-      margin-top: 20px;
+      margin-top: 40px;
     }
-
-    .feature-item {
+    .step-card {
+      flex: 1;
       background: white;
       border-radius: 28px;
       padding: 28px 20px;
       text-align: center;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.02);
-      border: 1px solid #eef2f8;
+      box-shadow: 0 12px 22px -8px rgba(0,0,0,0.05);
+      border: 1px solid #EEF3F0;
+      transition: 0.2s;
     }
-
-    .feature-item i {
-      font-size: 2.4rem;
-      color: #25D366;
-      margin-bottom: 20px;
-    }
-
-    /* pricing */
-    .pricing-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 32px;
-      margin-top: 24px;
-    }
-
-    .pricing-card {
-      background: white;
-      border-radius: 32px;
-      padding: 32px 24px;
-      flex: 1 1 280px;
-      box-shadow: 0 20px 35px -12px rgba(0,0,0,0.08);
-      transition: all 0.2s;
-      border: 1px solid #eef2f8;
-    }
-
-    .pricing-card.popular {
-      border-top: 6px solid #25D366;
-      transform: scale(1.02);
-    }
-
-    .price {
-      font-size: 2.5rem;
-      font-weight: 800;
-      margin: 20px 0;
-    }
-
-    .price small {
-      font-size: 1rem;
-      font-weight: 400;
-    }
-
-    .pricing-card ul {
-      margin: 24px 0;
-      list-style: none;
-    }
-
-    .pricing-card li {
-      margin-bottom: 12px;
+    .step-number {
+      background: #25D36620;
+      width: 56px;
+      height: 56px;
       display: flex;
       align-items: center;
-      gap: 8px;
+      justify-content: center;
+      border-radius: 60px;
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: #075E54;
+      margin: 0 auto 20px;
     }
 
-    .pricing-card li i {
+    /* features grid */
+    .feature-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 24px;
+      margin: 40px 0;
+    }
+    .feature-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      background: #FBFEF9;
+      padding: 12px 0;
+      font-weight: 500;
+      border-bottom: 1px dashed #DDE5E0;
+    }
+    .feature-item i {
+      font-size: 1.4rem;
       color: #25D366;
-      width: 20px;
+    }
+
+    /* pricing cards */
+    .pricing-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 32px;
+      justify-content: center;
+      margin: 48px 0 20px;
+    }
+    .pricing-card {
+      background: white;
+      border-radius: 40px;
+      padding: 36px 28px;
+      flex: 1;
+      min-width: 270px;
+      transition: all 0.25s;
+      box-shadow: 0 18px 36px -12px rgba(0, 0, 0, 0.08);
+      border: 1px solid #E8EFEA;
+    }
+    .pricing-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 30px 45px -15px rgba(0,0,0,0.12);
+    }
+    .price {
+      font-size: 2.3rem;
+      font-weight: 800;
+      margin: 20px 0 12px;
+      color: #075E54;
+    }
+    .plan-feature {
+      list-style: none;
+      margin: 24px 0;
+    }
+    .plan-feature li {
+      margin: 14px 0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
 
     /* FAQ */
     .faq-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      margin: 40px 0;
     }
-
-    .faq-item h4 {
-      font-weight: 700;
+    .faq-card {
+      background: #FCFEF9;
+      border-radius: 28px;
+      padding: 20px 28px;
+      border: 1px solid #E5EDE5;
+    }
+    .faq-question {
+      font-weight: 800;
+      font-size: 1.1rem;
       margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
     }
 
-    .footer {
-      background: #0F1E2D;
-      color: #cbd5e1;
-      padding: 48px 0 24px;
-      border-radius: 32px 32px 0 0;
+    /* image placeholder style */
+    .img-placeholder {
+      background: #F3F8F2;
+      border: 2px dashed #B8D9C2;
+      border-radius: 32px;
+      padding: 40px 20px;
+      text-align: center;
+      color: #1E6B41;
+      font-weight: 500;
+      transition: 0.2s;
+      cursor: pointer;
+    }
+    .img-placeholder i {
+      font-size: 2.5rem;
+      margin-bottom: 12px;
+      color: #41B883;
     }
 
-    .footer a {
-      color: #25D366;
-      text-decoration: none;
+    /* hero two columns */
+    .hero-grid {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 48px;
+      margin: 40px 0 30px;
+    }
+    .hero-left {
+      flex: 1.2;
+    }
+    .hero-right {
+      flex: 0.9;
+    }
+    @media (max-width: 800px) {
+      .container {
+        padding: 0 24px;
+      }
+      .hero-grid {
+        flex-direction: column;
+      }
     }
 
-    /* responsivity */
-    @media (max-width: 768px) {
-      .hero-content h1 {
-        font-size: 2.2rem;
-      }
-      section {
-        padding: 56px 0;
-      }
-      .section-title {
-        font-size: 1.8rem;
-      }
-      .pricing-card.popular {
-        transform: none;
-      }
+    /* floating micro interactions */
+    .btn, .pricing-card, .step-card {
+      transition: all 0.25s ease;
+    }
+    footer {
+      text-align: center;
+      padding: 30px 0 40px;
+      border-top: 1px solid #E9F0E9;
+      margin-top: 30px;
     }
   </style>
 </head>
 <body>
 
-<!-- Hero Section -->
-<section class="hero">
-  <div class="container">
-    <div class="hero-grid">
-      <div class="hero-content">
-        <div class="badge-green">✨ AI-Powered WhatsApp Automation</div>
-        <h1>Stop Losing Property Deals to Slow Follow-Up — <span class="hero-highlight">We Automate Your WhatsApp</span> So You Close More, Work Less</h1>
-        <p style="font-size: 1.2rem; color: #2c3e4e; margin: 16px 0;">We help Lagos real estate agencies respond to every lead in under 60 seconds — even at 2am.</p>
-        <div class="rating">
-          <div class="stars">
-            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
-          </div>
-          <span><strong>4.9/5</strong> from 47+ clients • Trusted by top Lagos agents</span>
-        </div>
-        <div class="hero-buttons">
-          <a href="https://real-estate-chatbot-1-wkoc.onrender.com" target="_blank" rel="noopener noreferrer" class="btn"><i class="fab fa-whatsapp"></i> Get a Free WhatsApp Bot Demo</a>
-          <a href="#demo-bot-preview" class="btn btn-outline">See Bot in action →</a>
-        </div>
-      </div>
-      <!-- mini mock / abstract -->
-      <div style="flex: 0.8; background: #eef2f5; border-radius: 38px; padding: 16px; text-align: center;">
-        <i class="fab fa-whatsapp" style="font-size: 3rem; color:#25D366;"></i>
-        <p style="font-weight: 600; margin-top: 12px;">⚡ Instant response 24/7<br>Serious buyers, automated</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Pain Points (DOES THIS SOUND LIKE YOU?) -->
 <div class="container">
-  <div style="text-align: center;">
-    <h2 class="section-title">📉 DOES THIS SOUND LIKE YOU?</h2>
-    <p class="section-sub">If any of these struggles feel familiar, our WhatsApp bot flips the script.</p>
-  </div>
-  <div class="pain-list">
-    <div class="pain-card"><i class="fas fa-clock"></i> Leads message you and get no reply for hours</div>
-    <div class="pain-card"><i class="fas fa-building"></i> You’re showing a property while 10 new inquiries pile up</div>
-    <div class="pain-card"><i class="fas fa-trophy"></i> Competitors close deals you brought in first</div>
-    <div class="pain-card"><i class="fas fa-repeat"></i> Your team manually sends the same property details 50x a day</div>
-  </div>
-</div>
 
-<!-- TRY OUR DEMO WHATSAPP BOT (live mock + external bot link) -->
-<section id="demo-bot-preview" style="background: #F7FAFE;">
-  <div class="container">
-    <div class="section-title">🤖 TRY OUR DEMO WHATSAPP BOT</div>
-    <p class="section-sub">Experience real-time automation — qualify leads, share properties & schedule viewings automatically.</p>
-    <div class="demo-bot-card" style="max-width: 750px; margin: 0 auto;">
-      <div class="chat-header">
-        <div class="chat-avatar"><i class="fab fa-whatsapp"></i></div>
-        <div><strong>Atlas Realty</strong> <span style="font-size: 0.8rem;">@AtlasRealty • Online</span><br><span style="font-size: 0.7rem;">⚡ Instant response 24/7 — Get replies in seconds, even at 2am.</span></div>
+  <!-- header / nav -->
+  <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; padding: 28px 0 16px;">
+    <div style="font-size: 1.9rem; font-weight: 800; background: linear-gradient(125deg, #075E54, #2D9C5C); background-clip: text; -webkit-background-clip: text; color: transparent;">ATLAS AUTOMATION</div>
+    <a href="#" class="btn btn-outline" style="padding: 10px 28px;"><i class="fab fa-whatsapp"></i> Free Demo</a>
+  </div>
+
+  <!-- Hero with image placeholder left for future -->
+  <div class="hero-grid">
+    <div class="hero-left">
+      <h1 style="font-size: 3.2rem; font-weight: 800; line-height: 1.2; letter-spacing: -0.02em; margin-bottom: 24px;">Stop Losing Property Deals to Slow Follow-Up — <span style="color: #25D366;">We Automate Your WhatsApp</span> So You Close More, Work Less</h1>
+      <p style="font-size: 1.2rem; color: #2C4A5E; margin-bottom: 28px;">We help Lagos real estate agencies respond to every lead in under 60 seconds — even at 2am</p>
+      <div style="display: flex; flex-wrap: wrap; gap: 20px; align-items: center; margin-bottom: 32px;">
+        <a href="#" class="btn btn-primary"><i class="fab fa-whatsapp"></i> Get a Free WhatsApp Bot Demo</a>
+        <span style="font-size: 0.9rem; font-weight: 500; background: #F2F6F9; padding: 8px 18px; border-radius: 60px;">No commitments. Just results.</span>
       </div>
-      <div class="chat-body">
-        <div class="message-bot">
-          <strong>🏠 Find Your Dream Property</strong><br>Lagos • Alagbado • Port Harcourt<br><span style="font-size: 0.75rem;">✔️ Qualifies your leads — we ask the right questions, so you talk to serious buyers.</span>
+      <div class="trust-badge">
+        <span>Trusted by top real estate agents in Lagos</span>
+        <span class="stars">★★★★★</span>
+        <span><strong>4.9/5</strong> from 47+ clients</span>
+      </div>
+    </div>
+    <div class="hero-right">
+      <!-- IMAGE PLACEHOLDER: user can replace with actual real estate / dashboard image -->
+      <div class="img-placeholder">
+        <i class="fas fa-chalkboard-user"></i>
+        <p><strong>➕ Image placeholder</strong><br>Add WhatsApp dashboard preview<br> or agency showcase</p>
+        <span style="font-size: 0.7rem;">(Replace with your image)</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- DOES THIS SOUND LIKE YOU? -->
+  <div class="section">
+    <div class="badge-label">⚠️ Pain points</div>
+    <h2>DOES THIS SOUND LIKE YOU?</h2>
+    <div class="problem-grid">
+      <div class="problem-item"><i class="fas fa-clock"></i> Leads message you and get no reply for hours</div>
+      <div class="problem-item"><i class="fas fa-building"></i> You’re showing a property while 10 new inquiries pile up</div>
+      <div class="problem-item"><i class="fas fa-trophy"></i> Competitors close deals you brought in first</div>
+      <div class="problem-item"><i class="fas fa-repeat"></i> Your team manually sends the same property details 50 times a day</div>
+    </div>
+  </div>
+
+  <!-- TRY OUR DEMO WHATSAPP BOT (exact replica with enhanced style) -->
+  <div class="section">
+    <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap;">
+      <h2>TRY OUR DEMO WHATSAPP BOT</h2>
+      <span class="badge-label" style="background: #E3F2E9;">🟢 24/7 Live</span>
+    </div>
+    <div class="wa-card">
+      <div class="wa-header">
+        <div class="wa-avatar"><i class="fab fa-whatsapp" style="font-size: 1.8rem;"></i></div>
+        <div><strong style="font-size: 1.1rem;">Atlas Realty</strong><br><span style="font-size: 0.7rem;">@AtlasRealty - Online · Instant response 24/7</span></div>
+      </div>
+      <div class="wa-chat">
+        <div class="message-bot"><strong>Welcome to Atlas Realty</strong><br> I am PropBot, your personal real estate assistant powered by Atlas Automations. I can help you buy, sell or rent properties across Nigeria. How may I assist you today?</div>
+        <div class="quick-row">
+          <span class="quick-chip">🏠 Buy</span>
+          <span class="quick-chip">📄 Rent</span>
+          <span class="quick-chip">🏷️ Sell</span>
         </div>
-        <div class="message-bot">
-          <strong>🔁 Buy &nbsp;|&nbsp; Rent &nbsp;|&nbsp; Sell</strong><br>📅 Bookings automatically — No more back-and-forth. We handle scheduling.
-        </div>
-        <div class="message-bot">
-          <strong>👋 Welcome to Atlas Realty</strong><br>I am <strong>PropBot</strong>, your personal real estate assistant powered by Atlas Automations. I can help you buy, sell or rent properties across Nigeria. How may I assist you today?
-          <div class="quick-buttons">
-            <span class="qb">🏠 Buy</span>
-            <span class="qb">📋 Rent</span>
-            <span class="qb">💰 Sell</span>
-          </div>
+        <div class="message-bot" style="background: #dcf8c5; border-radius: 18px 4px 18px 18px;">📍 Find Your Dream Property — Lagos · Alagbado · Port Harcourt<br>✔ Qualifies your leads: We ask the right questions, so you talk to serious buyers.</div>
+        <div class="message-bot">📅 Bookings automatically — No more back-and-forth. We handle scheduling.<br>✨ Get replies in seconds, even at 2am.</div>
+        <a href="#" class="demo-btn-chat"><i class="fab fa-whatsapp"></i> Chat with Demo Bot →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- HOW IT WORKS (exact steps + in 7 days) -->
+  <div class="section">
+    <h2>HOW IT WORKS</h2>
+    <div class="steps-row">
+      <div class="step-card"><div class="step-number">1</div><h4>We audit your current lead process</h4><p style="color:#3C6E4F;">Deep analysis of your response gaps</p></div>
+      <div class="step-card"><div class="step-number">2</div><h4>We build your custom WhatsApp automation</h4><p>Tailored flows for your agency</p></div>
+      <div class="step-card"><div class="step-number">3</div><h4>Auto property listings broadcast</h4><p>Send instant property details to prospects</p></div>
+      <div class="step-card"><div class="step-number">4</div><h4>Lead quality automation</h4><p>Highlight serious buyers, filter noise</p></div>
+    </div>
+    <div style="text-align: center; margin-top: 32px;"><span class="badge-label" style="background: #25D36620; font-weight: 700;">⚡ Complete automation in <strong>7 days</strong> ⚡</span></div>
+  </div>
+
+  <!-- WHAT YOU GET with image placeholder side by side -->
+  <div class="section">
+    <h2>WHAT YOU GET</h2>
+    <div style="display: flex; flex-wrap: wrap; gap: 32px; align-items: center;">
+      <div style="flex: 2;">
+        <div class="feature-list">
+          <div class="feature-item"><i class="fas fa-bolt"></i> Instant WhatsApp lead response bot</div>
+          <div class="feature-item"><i class="fas fa-bullhorn"></i> Auto property listing broadcast</div>
+          <div class="feature-item"><i class="fas fa-filter"></i> Lead quality automation</div>
+          <div class="feature-item"><i class="fas fa-calendar-check"></i> View assignment & schedule viewings</div>
+          <div class="feature-item"><i class="fas fa-chart-line"></i> Monthly performance report</div>
+          <div class="feature-item"><i class="fas fa-robot"></i> Book and manage viewings automatically</div>
+          <div class="feature-item"><i class="fas fa-chart-simple"></i> You close more deals on autopilot</div>
         </div>
       </div>
-      <a href="https://real-estate-chatbot-1-wkoc.onrender.com" target="_blank" rel="noopener noreferrer" class="demo-link-btn">
-        <i class="fab fa-whatsapp"></i> Chat with Demo Bot — See Live Automation →
-      </a>
-    </div>
-    <p style="text-align: center; margin-top: 24px; font-size: 0.9rem;">⭐ Click the button above to experience our bot in real-time — closes leads while you sleep.</p>
-  </div>
-</section>
-
-<!-- HOW IT WORKS -->
-<div class="container">
-  <h2 class="section-title">⚙️ HOW IT WORKS</h2>
-  <p class="section-sub">From audit to automation — we get you live in 7 days, no tech stress.</p>
-  <div class="features-grid">
-    <div class="feature-item"><i class="fas fa-search"></i><h3>1. We audit your current lead process</h3><p>We analyze response gaps & pain points.</p></div>
-    <div class="feature-item"><i class="fas fa-bullhorn"></i><h3>2. Auto property listings broadcast</h3><p>Instant property sharing to qualified leads.</p></div>
-    <div class="feature-item"><i class="fas fa-filter"></i><h3>3. Lead quality automation</h3><p>AI asks qualifying questions, only serious buyers reach you.</p></div>
-    <div class="feature-item"><i class="fas fa-rocket"></i><h3>4. We build your custom WhatsApp automation</h3><p><strong>in 7 days</strong> — fully tailored to your agency.</p></div>
-  </div>
-</div>
-
-<!-- WHAT YOU GET -->
-<section style="background: #F3F6FC;">
-  <div class="container">
-    <h2 class="section-title">🎁 WHAT YOU GET</h2>
-    <div class="features-grid">
-      <div class="feature-item"><i class="fab fa-whatsapp"></i><h3>Instant WhatsApp lead response bot</h3></div>
-      <div class="feature-item"><i class="fas fa-chart-line"></i><h3>Auto property listing broadcast</h3></div>
-      <div class="feature-item"><i class="fas fa-user-check"></i><h3>Lead quality automation</h3></div>
-      <div class="feature-item"><i class="fas fa-calendar-alt"></i><h3>View assignment & schedule automation</h3></div>
-      <div class="feature-item"><i class="fas fa-chart-simple"></i><h3>Monthly performance report</h3></div>
-      <div class="feature-item"><i class="fas fa-handshake"></i><h3>Book and manage viewings automatically</h3></div>
-      <div class="feature-item"><i class="fas fa-trophy"></i><h3>You close more deals on autopilot</h3></div>
+      <div style="flex: 1.2;">
+        <!-- image placeholder: user can add picture of dashboard or team -->
+        <div class="img-placeholder">
+          <i class="fas fa-image"></i>
+          <p><strong>➕ Image area</strong><br>Performance dashboard preview,<br> client success image</p>
+        </div>
+      </div>
     </div>
   </div>
-</section>
 
-<!-- PRICING PLANS -->
-<div class="container">
-  <h2 class="section-title">💰 CHOOSE YOUR PLAN</h2>
-  <p class="section-sub">Start risk-free. 3 days free trial, no credit card needed.</p>
-  <div class="pricing-grid">
-    <!-- Free Trial Card -->
-    <div class="pricing-card">
-      <h3>🚀 3 DAYS FREE TRIAL</h3>
-      <div class="price">₦0 <small>/ free trial</small></div>
-      <p style="margin-bottom: 12px;">Test out our best features</p>
-      <ul>
-        <li><i class="fas fa-check-circle"></i> Everything in free trial</li>
-        <li><i class="fas fa-check-circle"></i> All core features</li>
-        <li><i class="fas fa-check-circle"></i> Full automation setup</li>
-        <li><i class="fas fa-check-circle"></i> No credit card needed</li>
-      </ul>
-      <a href="https://real-estate-chatbot-1-wkoc.onrender.com" target="_blank" class="btn btn-small" style="background: #1f2a3e; width: 100%; text-align: center;">Start Free Trial <i class="fas fa-arrow-right"></i></a>
-    </div>
-    <!-- Monthly Plan -->
-    <div class="pricing-card popular">
-      <h3>📆 MONTHLY PLAN</h3>
-      <div class="price">₦150,000 <small>/month</small></div>
-      <ul>
-        <li><i class="fas fa-check-circle"></i> Everything in free trial</li>
-        <li><i class="fas fa-check-circle"></i> Full automation setup</li>
-        <li><i class="fas fa-check-circle"></i> Ongoing support</li>
-        <li><i class="fas fa-check-circle"></i> Monthly performance report</li>
-      </ul>
-      <a href="#" class="btn btn-small" style="width: 100%; text-align: center;" onclick="alert('🚀 Thank you! Our team will contact you within 2 hours to activate your monthly plan. Or email atlasautomations.ng@gmail.com'); return false;">Get Started →</a>
-    </div>
-    <!-- One-time payment -->
-    <div class="pricing-card">
-      <h3>🔒 ONE-TIME PAYMENT</h3>
-      <div class="price">₦500,000 <small>/ lifetime</small></div>
-      <ul>
-        <li><i class="fas fa-check-circle"></i> Everything in monthly plan</li>
-        <li><i class="fas fa-check-circle"></i> One-time payment</li>
-        <li><i class="fas fa-check-circle"></i> 30 days free support</li>
-        <li><i class="fas fa-check-circle"></i> No monthly fees</li>
-      </ul>
-      <a href="#" class="btn btn-small btn-outline" style="width: 100%;" onclick="alert('✅ One-time ownership plan selected. Send us a message to finalize setup: +234 906 123 4567'); return false;">Get Started →</a>
+  <!-- CHOOSE YOUR PLAN (exact plans: Free trial, Monthly ₦150k, One-time ₦500k) -->
+  <div class="section">
+    <h2>CHOOSE YOUR PLAN</h2>
+    <div class="pricing-wrapper">
+      <!-- Free trial plan -->
+      <div class="pricing-card">
+        <h3 style="font-size: 1.6rem;">3 DAYS FREE TRIAL</h3>
+        <p>Test out our list-free</p>
+        <div class="price">₦0</div>
+        <ul class="plan-feature">
+          <li><i class="fas fa-check-circle" style="color:#25D366;"></i> Everything in free trial</li>
+          <li><i class="fas fa-check-circle" style="color:#25D366;"></i> All core features</li>
+          <li><i class="fas fa-check-circle" style="color:#25D366;"></i> Full automation setup</li>
+          <li><i class="fas fa-check-circle" style="color:#25D366;"></i> No credit card needed</li>
+        </ul>
+        <a href="#" class="btn btn-outline" style="width:100%;">Start Free Trial</a>
+        <p style="margin-top: 12px; font-size:0.8rem;">✔ Get Started</p>
+      </div>
+      <!-- Monthly plan -->
+      <div class="pricing-card">
+        <h3>MONTHLY PLAN</h3>
+        <p>Billed monthly</p>
+        <div class="price">₦150,000 <small style="font-size: 0.9rem;">/month</small></div>
+        <ul class="plan-feature">
+          <li><i class="fas fa-check-circle" style="color:#25D366;"></i> Everything in free trial</li>
+          <li><i class="fas fa-check-circle" style="color:#25D366;"></i> Full automation setup</li>
+          <li><i class="fas fa-check-circle" style="color:#25D366;"></i> Ongoing support</li>
+          <li><i class="fas fa-check-circle" style="color:#25D366;"></i> Monthly performance report</li>
+        </ul>
+        <a href="#" class="btn btn-primary" style="width:100%;">Get Started</a>
+      </div>
+      <!-- One-time payment -->
+      <div class="pricing-card">
+        <h3>ONE-TIME PAYMENT</h3>
+        <p>Pay once, own it</p>
+        <div class="price">₦500,000</div>
+        <ul class="plan-feature">
+          <li><i class="fas fa-check-circle" style="color:#25D366;"></i> Everything in monthly plan</li>
+          <li><i class="fas fa-check-circle" style="color:#25D366;"></i> One-time payment</li>
+          <li><i class="fas fa-check-circle" style="color:#25D366;"></i> 30 days free support</li>
+          <li><i class="fas fa-check-circle" style="color:#25D366;"></i> No monthly fees</li>
+        </ul>
+        <a href="#" class="btn btn-outline" style="width:100%;">Get Started</a>
+      </div>
     </div>
   </div>
-  <p style="text-align: center; margin-top: 32px; background: #EFF3F8; padding: 12px; border-radius: 60px;"><strong>🔁 Try Atlas Automations risk-free for 3 days.</strong> If you don’t see results, we’ll refund you. No fine print.</p>
-</div>
 
-<!-- FAQ SECTION -->
-<section style="background: white;">
-  <div class="container">
-    <h2 class="section-title">❓ FREQUENTLY ASKED QUESTIONS</h2>
+  <!-- FREQUENTLY ASKED QUESTIONS + risk-free guarantee (exact match) -->
+  <div class="section">
+    <h2>FREQUENTLY ASKED QUESTIONS</h2>
     <div class="faq-grid">
-      <div class="faq-item"><h4><i class="fas fa-building"></i> Will this work for my kind of agency?</h4><p>Yes! We work with all types of real estate agencies, from independent agents to large firms in Lagos, PH, and across Nigeria.</p></div>
-      <div class="faq-item"><h4><i class="fas fa-clock"></i> How long does setup take?</h4><p>We set up your custom automation within 7 days after our strategy call.</p></div>
-      <div class="faq-item"><h4><i class="fas fa-mobile-alt"></i> What if I’m not tech-savvy?</h4><p>No worries! We handle everything for you — from integration to training.</p></div>
-      <div class="faq-item"><h4><i class="fas fa-sync-alt"></i> Do I need to change my current process?</h4><p>Not at all. We fit into your current process and make it faster.</p></div>
-      <div class="faq-item"><h4><i class="fas fa-chart-line"></i> Can I see results during the free trial?</h4><p>Absolutely. You'll see faster response rates and lead qualification in real time.</p></div>
-      <div class="faq-item"><h4><i class="fas fa-headset"></i> Is support included?</h4><p>Yes, monthly plans include ongoing support. One-time plan includes 30 days of priority support.</p></div>
+      <div class="faq-card">
+        <div class="faq-question"><i class="fas fa-building" style="color:#25D366;"></i> Will this work for my kind of agency?</div>
+        <p>Yes! We work with all types of real estate agencies, from independent agents to large firms in Lagos.</p>
+      </div>
+      <div class="faq-card">
+        <div class="faq-question"><i class="fas fa-laptop-code" style="color:#25D366;"></i> What if I’m not tech-savvy?</div>
+        <p>No worries! We handle everything for you. You just focus on closing deals.</p>
+      </div>
+      <div class="faq-card">
+        <div class="faq-question"><i class="fas fa-sync-alt" style="color:#25D366;"></i> Do I need to change my current process?</div>
+        <p>Not at all. We fit into your current process and make it better.</p>
+      </div>
+      <div class="faq-card" style="background: #E9F8EF; border-color:#BDE0CB;">
+        <div class="faq-question"><i class="fas fa-shield-alt"></i> Try Atlas Automations risk-free for 3 days.</div>
+        <p>If you don’t see results, we’ll refund you. <strong>100% guarantee.</strong></p>
+      </div>
     </div>
-  </div>
-</section>
 
-<!-- CALL TO ACTION + BOT DEMO FINAL -->
-<div style="background: linear-gradient(115deg, #0F2B29 0%, #1A3C38 100%); color: white; padding: 60px 0; text-align: center; border-radius: 40px 40px 0 0; margin-top: 20px;">
-  <div class="container">
-    <h2 style="font-size: 2rem; font-weight: 800;">Get a Free WhatsApp Bot Demo</h2>
-    <p style="margin: 16px auto 32px; max-width: 550px;">No commitments. Just results. See how we convert missed inquiries into closed deals.</p>
-    <a href="https://real-estate-chatbot-1-wkoc.onrender.com" target="_blank" class="btn" style="background: white; color: #1A3C38; box-shadow: none;"><i class="fab fa-whatsapp" style="color: #25D366;"></i> Try Live Demo Bot Now →</a>
-    <div style="margin-top: 40px; display: flex; justify-content: center; gap: 32px; flex-wrap: wrap; font-size: 0.9rem;">
-      <span><i class="fas fa-phone-alt"></i> +234 906 123 4567</span>
-      <span><i class="fas fa-envelope"></i> atlasautomations.ng@gmail.com</span>
+    <!-- Final contact CTA with image placeholder possibility -->
+    <div style="background: linear-gradient(115deg, #F4FBF7, #FFFFFF); border-radius: 48px; padding: 48px 32px; margin-top: 40px; text-align: center; border: 1px solid #DBEADE;">
+      <h3 style="margin-bottom: 16px;">📱 Get a Free WhatsApp Bot Demo</h3>
+      <p style="font-size: 1.2rem; font-weight: 500; margin-bottom: 8px;"><i class="fab fa-whatsapp"></i> +234 906 123 4567 &nbsp;|&nbsp; <i class="fas fa-envelope"></i> atlasautomations.ng@gmail.com</p>
+      <div style="max-width: 320px; margin: 28px auto 0;">
+        <a href="#" class="btn btn-primary" style="width:100%;"><i class="fab fa-whatsapp"></i> Request Demo Now →</a>
+      </div>
+      <!-- extra image placeholder: team photo or bot preview -->
+      <div class="img-placeholder" style="margin-top: 36px; background: #ffffff;">
+        <i class="fas fa-chalkboard"></i> <strong>➕ Add testimonial / agency image here</strong> — boost trust
+      </div>
     </div>
   </div>
+
+  <footer>
+    <p>© 2025 Atlas Automation — Automate WhatsApp, close more real estate deals in Lagos. <br>⚡ Instant follow-up, 24/7 lead capture.</p>
+  </footer>
 </div>
 
-<!-- FOOTER -->
-<footer class="footer">
-  <div class="container">
-    <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 24px; align-items: center;">
-      <div>
-        <h3 style="color: white;">⚡ ATLAS AUTOMATION</h3>
-        <p style="max-width: 320px;">WhatsApp lead engagement for real estate pros. Turn inquiries into contracts on autopilot.</p>
-      </div>
-      <div>
-        <p><i class="fab fa-whatsapp"></i> <a href="https://real-estate-chatbot-1-wkoc.onrender.com" target="_blank">Try WhatsApp Demo Bot</a></p>
-        <p><i class="far fa-clock"></i> 24/7 Automated Responses</p>
-        <p><i class="fas fa-map-marker-alt"></i> Lagos, Nigeria</p>
-      </div>
-    </div>
-    <hr style="margin: 32px 0; border-color: #2d4a5c;">
-    <p style="text-align: center;">© 2025 Atlas Automation — Making Lagos real estate close faster, smarter. All rights reserved.</p>
-  </div>
-</footer>
-
-<!-- small script for smooth demo alert (no intrusive) -->
+<!-- subtle script for hover and empty link prevention -->
 <script>
-  // interactive but not required, just enhance UX for pricing (already inline)
-  console.log("Atlas Automation landing — live demo bot ready");
+  document.querySelectorAll('a[href="#"]').forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      alert('🚀 Demo request / trial signup — integrate your CRM or WhatsApp API here.');
+    });
+  });
 </script>
 </body>
-                               </html>
+      </html>
