@@ -42,22 +42,19 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;overf
 nav{
   position:fixed;top:0;left:0;right:0;z-index:1000;
   display:flex;align-items:center;justify-content:space-between;
-  padding:0 40px;height:64px;
+  padding:0 40px;height:70px;
   background:rgba(7,9,15,.95);
   backdrop-filter:blur(20px);
   border-bottom:1px solid rgba(255,255,255,.07);
 }
-.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none;}
 .nav-logo-icon{
-  width:38px;height:38px;
-  background:linear-gradient(135deg,var(--accent),var(--accent2));
-  border-radius:9px;
+  width:44px;
+  height:44px;
   display:flex;
   align-items:center;
   justify-content:center;
-  position:relative;
   overflow:hidden;
-  padding:5px;
 }
 .nav-logo-icon img{
   width:100%;
@@ -65,8 +62,8 @@ nav{
   object-fit:contain;
 }
 .nav-logo-text{display:flex;flex-direction:column;line-height:1;}
-.nav-logo-name{font-size:.92rem;font-weight:800;letter-spacing:1.5px;color:#fff;}
-.nav-logo-sub{font-size:.58rem;letter-spacing:3px;color:var(--muted);text-transform:uppercase;}
+.nav-logo-name{font-size:.95rem;font-weight:800;letter-spacing:1.5px;color:#fff;}
+.nav-logo-sub{font-size:.6rem;letter-spacing:3px;color:var(--muted);text-transform:uppercase;}
 .nav-links{display:flex;gap:28px;}
 .nav-links a{color:var(--muted);text-decoration:none;font-size:.85rem;font-weight:400;transition:color .2s;}
 .nav-links a:hover{color:#fff;}
@@ -232,7 +229,6 @@ nav{
 }
 .demo-inner{display:grid;grid-template-columns:1fr 1fr;gap:46px;align-items:start;}
 
-/* Demo image styling */
 .demo-image{
   border-radius:16px;
   overflow:hidden;
@@ -245,7 +241,6 @@ nav{
   display:block;
 }
 
-/* DEMO FEATURES */
 .demo-feats{display:flex;flex-direction:column;gap:22px;}
 .d-feat{display:flex;gap:14px;align-items:flex-start;}
 .d-feat-ico{
@@ -449,11 +444,11 @@ nav{
 </head>
 <body>
 
-<!-- NAV with your logo image -->
+<!-- NAV with your logo image - positioned exactly as requested -->
 <nav>
   <a class="nav-logo" href="#">
     <div class="nav-logo-icon">
-      <img src="file_000000005f8c720a8a9f7eb9f3d2ea4a.png" alt="Atlas Automations logo">
+      <img src="file_000000005f8c720a8a9f7eb9f3d2ea4a.png" alt="Atlas Automations Logo">
     </div>
     <div class="nav-logo-text">
       <span class="nav-logo-name">ATLAS AUTOMATIONS</span>
@@ -472,7 +467,7 @@ nav{
   </a>
 </nav>
 
-<!-- HERO -->
+<!-- HERO SECTION (text unchanged) -->
 <div class="hero">
   <div class="fade-up">
     <div class="hero-eyebrow"><span class="dot"></span>#1 Real Estate Automation in Lagos</div>
@@ -509,7 +504,7 @@ nav{
   </div>
 </div>
 
-<!-- PAIN -->
+<!-- PAIN SECTION -->
 <section class="sec">
   <div class="sec-label">Does This Sound Like You?</div>
   <div class="pain-grid">
@@ -520,16 +515,14 @@ nav{
   </div>
 </section>
 
-<!-- DEMO SECTION: your demo image placed here -->
+<!-- DEMO SECTION with your demo screenshot -->
 <section class="sec" id="demo" style="padding-top:0;">
   <div class="demo-wrap">
     <div class="sec-label" style="margin-bottom:28px;">Try Our Demo WhatsApp Bot 💬</div>
     <div class="demo-inner">
-      <!-- Left column: your demo screenshot image -->
       <div class="demo-image">
-        <img src="file_000000008ba871f4b7074dda621993d3.png" alt="WhatsApp demo preview">
+        <img src="file_000000008ba871f4b7074dda621993d3.png" alt="WhatsApp automation demo">
       </div>
-      <!-- Right column: features -->
       <div class="demo-feats">
         <div class="d-feat"><div class="d-feat-ico">⚡</div><div><h4>Instant responses 24/7</h4><p>Get replies in seconds, even at 2am.</p></div></div>
         <div class="d-feat"><div class="d-feat-ico teal">🎯</div><div><h4>Qualifies your leads</h4><p>We ask the right questions, so you talk to serious buyers only.</p></div></div>
@@ -551,22 +544,9 @@ nav{
 <section class="sec" id="how">
   <div class="sec-label">How It Works</div>
   <div class="steps">
-    <div class="step">
-      <div class="step-icon">🔍</div>
-      <div class="step-num s1">1</div>
-      <h3>We audit your current lead process</h3>
-      <div class="step-free">(Free)</div>
-    </div>
-    <div class="step">
-      <div class="step-icon">⚙️</div>
-      <div class="step-num s2">2</div>
-      <h3>We build your custom WhatsApp automation in 7 days</h3>
-    </div>
-    <div class="step">
-      <div class="step-icon">📈</div>
-      <div class="step-num s3">3</div>
-      <h3>You close more deals on autopilot</h3>
-    </div>
+    <div class="step"><div class="step-icon">🔍</div><div class="step-num s1">1</div><h3>We audit your current lead process</h3><div class="step-free">(Free)</div></div>
+    <div class="step"><div class="step-icon">⚙️</div><div class="step-num s2">2</div><h3>We build your custom WhatsApp automation in 7 days</h3></div>
+    <div class="step"><div class="step-icon">📈</div><div class="step-num s3">3</div><h3>You close more deals on autopilot</h3></div>
   </div>
 </section>
 
@@ -586,40 +566,9 @@ nav{
 <section class="sec" id="pricing">
   <div class="sec-label">Choose Your Plan</div>
   <div class="pricing-grid">
-    <div class="pc">
-      <div class="pc-tag gold">3 DAYS FREE TRIAL</div>
-      <div class="pc-sub">Test our bot risk-free</div>
-      <div class="pc-amt green">₦0</div>
-      <div class="pc-desc">3 days full access</div>
-      <ul class="pc-list"><li>All core features</li><li>Real-time support</li><li>No credit card needed</li></ul>
-      <a class="btn-free" href="https://wa.me/2349059144435?text=Hi%2C%20I%20want%20the%203%20day%20free%20trial" target="_blank">
-        <svg viewBox="0 0 24 24" style="width:16px;height:16px;fill:#000;flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        Start Free Trial
-      </a>
-    </div>
-    <div class="pc hot">
-      <div class="pc-badge">⭐ Most Popular</div>
-      <div class="pc-tag blue">MONTHLY PLAN</div>
-      <div class="pc-sub">Billed monthly</div>
-      <div class="pc-amt">₦150,000 <span class="pc-per">/month</span></div>
-      <div class="pc-desc">Less than the commission on one lost deal</div>
-      <ul class="pc-list"><li>Everything in free trial</li><li>Full automation setup</li><li>Ongoing support</li><li>Monthly performance report</li></ul>
-      <a class="btn-start" href="https://wa.me/2349059144435?text=Hi%2C%20I%20want%20the%20monthly%20plan" target="_blank">
-        <svg viewBox="0 0 24 24" style="width:16px;height:16px;fill:#fff;flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        Get Started
-      </a>
-    </div>
-    <div class="pc">
-      <div class="pc-tag white">ONE-TIME PAYMENT</div>
-      <div class="pc-sub">Pay once, own it</div>
-      <div class="pc-amt">₦500,000</div>
-      <div class="pc-desc">Own your automation forever</div>
-      <ul class="pc-list"><li>Everything in monthly plan</li><li>One-time payment</li><li>30 days free support</li><li>No monthly fees</li></ul>
-      <a class="btn-start" href="https://wa.me/2349059144435?text=Hi%2C%20I%20want%20the%20one-time%20plan" target="_blank">
-        <svg viewBox="0 0 24 24" style="width:16px;height:16px;fill:#fff;flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        Get Started
-      </a>
-    </div>
+    <div class="pc"><div class="pc-tag gold">3 DAYS FREE TRIAL</div><div class="pc-sub">Test our bot risk-free</div><div class="pc-amt green">₦0</div><div class="pc-desc">3 days full access</div><ul class="pc-list"><li>All core features</li><li>Real-time support</li><li>No credit card needed</li></ul><a class="btn-free" href="https://wa.me/2349059144435?text=Hi%2C%20I%20want%20the%203%20day%20free%20trial" target="_blank"><svg viewBox="0 0 24 24" style="width:16px;height:16px;fill:#000;"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>Start Free Trial</a></div>
+    <div class="pc hot"><div class="pc-badge">⭐ Most Popular</div><div class="pc-tag blue">MONTHLY PLAN</div><div class="pc-sub">Billed monthly</div><div class="pc-amt">₦150,000 <span class="pc-per">/month</span></div><div class="pc-desc">Less than the commission on one lost deal</div><ul class="pc-list"><li>Everything in free trial</li><li>Full automation setup</li><li>Ongoing support</li><li>Monthly performance report</li></ul><a class="btn-start" href="https://wa.me/2349059144435?text=Hi%2C%20I%20want%20the%20monthly%20plan" target="_blank"><svg viewBox="0 0 24 24" style="width:16px;height:16px;fill:#fff;"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>Get Started</a></div>
+    <div class="pc"><div class="pc-tag white">ONE-TIME PAYMENT</div><div class="pc-sub">Pay once, own it</div><div class="pc-amt">₦500,000</div><div class="pc-desc">Own your automation forever</div><ul class="pc-list"><li>Everything in monthly plan</li><li>One-time payment</li><li>30 days free support</li><li>No monthly fees</li></ul><a class="btn-start" href="https://wa.me/2349059144435?text=Hi%2C%20I%20want%20the%20one-time%20plan" target="_blank"><svg viewBox="0 0 24 24" style="width:16px;height:16px;fill:#fff;"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>Get Started</a></div>
   </div>
 </section>
 
@@ -637,39 +586,17 @@ nav{
 <!-- FOOTER -->
 <div class="footer-bar">
   <div class="footer-left">
-    <a class="f-logo" href="#">
-      <div class="f-logo-icon">A</div>
-      <div class="f-logo-text">ATLAS <span>AUTOMATIONS</span></div>
-    </a>
-    <div class="footer-copy">
-      <h3>Try Atlas Automations risk-free for 3 days.</h3>
-      <p>If you don't see results, we'll refund you.</p>
-    </div>
+    <a class="f-logo" href="#"><div class="f-logo-icon">A</div><div class="f-logo-text">ATLAS <span>AUTOMATIONS</span></div></a>
+    <div class="footer-copy"><h3>Try Atlas Automations risk-free for 3 days.</h3><p>If you don't see results, we'll refund you.</p></div>
   </div>
-  <a class="btn-wa" href="https://wa.me/2349059144435?text=Hi%2C%20I%20want%20a%20free%20WhatsApp%20Bot%20Demo" target="_blank">
-    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-    Get a Free WhatsApp Bot Demo
-  </a>
-  <div class="footer-contacts">
-    <a href="tel:+2349059144435">📞 +234 905 914 4435</a>
-    <a href="mailto:atlas.automations.ng@gmail.com">✉️ atlas.automations.ng@gmail.com</a>
-  </div>
+  <a class="btn-wa" href="https://wa.me/2349059144435?text=Hi%2C%20I%20want%20a%20free%20WhatsApp%20Bot%20Demo" target="_blank"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>Get a Free WhatsApp Bot Demo</a>
+  <div class="footer-contacts"><a href="tel:+2349059144435">📞 +234 905 914 4435</a><a href="mailto:atlas.automations.ng@gmail.com">✉️ atlas.automations.ng@gmail.com</a></div>
 </div>
 
 <script>
-// FAQ toggle
 function faq(el){el.parentElement.classList.toggle('open');}
-
-// Intersection observer for fade-in
-const obs=new IntersectionObserver((entries)=>{
-  entries.forEach(e=>{
-    if(e.isIntersecting){e.target.style.opacity='1';e.target.style.transform='translateY(0)';}
-  });
-},{threshold:.1});
-document.querySelectorAll('.pain-card,.feat,.pc,.step').forEach(el=>{
-  el.style.opacity='0';el.style.transform='translateY(20px)';el.style.transition='opacity .6s ease,transform .6s ease';
-  obs.observe(el);
-});
+const obs=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.style.opacity='1';e.target.style.transform='translateY(0)';}});},{threshold:.1});
+document.querySelectorAll('.pain-card,.feat,.pc,.step').forEach(el=>{el.style.opacity='0';el.style.transform='translateY(20px)';el.style.transition='opacity .6s ease,transform .6s ease';obs.observe(el);});
 </script>
 </body>
   </html>
