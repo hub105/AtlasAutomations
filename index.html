@@ -145,31 +145,22 @@ nav{
   padding:40px 20px;
   text-align:center;
 }
-.video-placeholder{
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  gap:16px;
-  z-index:2;
+/* Responsive container for YouTube Shorts */
+.video-container {
+    position: relative;
+    width: 100%;
+    max-width: 360px; /* Optimal width for Shorts */
+    margin: 0 auto;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 35px -10px rgba(0,0,0,0.5);
 }
-.video-placeholder-icon{
-  width:64px;
-  height:64px;
-  background:rgba(29,111,255,.2);
-  border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:2rem;
-  border:1px solid rgba(29,111,255,.4);
-}
-.video-placeholder p{
-  color:var(--sub);
-  font-size:.85rem;
-  background:rgba(0,0,0,.5);
-  padding:6px 16px;
-  border-radius:30px;
-  backdrop-filter:blur(4px);
+.video-container iframe {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 9 / 16; /* Keeps the vertical Shorts format */
+    display: block;
+    border: none;
 }
 .atlas-watermark{
   position:absolute;bottom:14px;right:14px;z-index:10;
@@ -461,7 +452,7 @@ nav{
 <nav>
   <a class="nav-logo" href="#">
     <div class="nav-logo-icon">
-      <img src="file_000000005f8c720a8a9f7eb9f3d2ea4a.png" alt="Atlas Automations Logo">
+      <img src="file_00000000192c724689f73b882212c2bb.png" alt="Atlas Automations Logo">
     </div>
     <div class="nav-logo-text">
       <span class="nav-logo-name">ATLAS AUTOMATIONS</span>
@@ -499,14 +490,20 @@ nav{
   <div class="hero-right fade-up-2">
     <div class="hero-video">
       <div class="hero-video-inner">
-        <div class="video-placeholder">
-          <div class="video-placeholder-icon">🎥</div>
-          <p>🎬 Video placeholder — add your video link here</p>
+        <div class="video-container">
+          <iframe 
+            src="https://www.youtube.com/embed/Y9c9p23kqZA?autoplay=1&mute=1&loop=1&playlist=Y9c9p23kqZA&controls=0&modestbranding=1&rel=0&showinfo=0"
+            title="Atlas Automations Demo"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen>
+          </iframe>
         </div>
       </div>
       <div class="atlas-watermark">
         <div class="wm-icon">
-          <img src="file_000000005f8c720a8a9f7eb9f3d2ea4a.png" alt="Atlas logo">
+          <img src="file_00000000192c724689f73b882212c2bb.png" alt="Atlas logo">
         </div>
         ATLAS AUTOMATIONS
       </div>
@@ -603,7 +600,7 @@ nav{
   <div class="footer-left">
     <a class="f-logo" href="#">
       <div class="f-logo-icon">
-        <img src="file_000000005f8c720a8a9f7eb9f3d2ea4a.png" alt="Atlas Automations Logo">
+        <img src="file_00000000192c724689f73b882212c2bb.png" alt="Atlas Automations Logo">
       </div>
       <div class="f-logo-text">ATLAS <span>AUTOMATIONS</span></div>
     </a>
@@ -628,4 +625,4 @@ const obs=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isInters
 document.querySelectorAll('.pain-card,.feat,.pc,.step').forEach(el=>{el.style.opacity='0';el.style.transform='translateY(20px)';el.style.transition='opacity .6s ease,transform .6s ease';obs.observe(el);});
 </script>
 </body>
-                                                                                                                   </html>
+  </html>
